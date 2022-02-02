@@ -10,13 +10,12 @@ import (
 var build = "develop"
 
 func main() {
-	log.Println("Starting service", build)
+	log.Println("Starting service updated", build)
 
 	shutdown := make(chan os.Signal, 1)
 	signal.Notify(shutdown, syscall.SIGINT, syscall.SIGTERM)
 	<-shutdown
-
-	log.Println("Stopping service", build)
 	defer log.Println("Service ended")
 
+	log.Println("Stopping service", build)
 }

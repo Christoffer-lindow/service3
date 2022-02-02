@@ -1,3 +1,3 @@
-module github.com/christoffer-lindow/service3
+module github.com/christoffer-lindow/service
 
 go 1.17

@@ -11,12 +11,12 @@ FROM alpine:3.14
 ARG BUILD_DATE
 ARG BUILD_REF
 
-COPY --from=build_sales-api /service /service/service3
-WORKDIR /service
-CMD ["./service3"]
+COPY --from=build_sales-api /service/service /service/service
+WORKDIR /service/
+CMD ["./service"]
 
 LABEL org.opencontainers.image.create="${BUILD_DATE}" \
   org.opencontainers.image.title="sales-api" \
-  org.opencontainers.image.authors="Christoffer Lindow <clindow@gmail.com>" \
+  org.opencontainers.image.authors="Christoffer Lindowx <clindow@gmail.com>" \
   org.opencontainers.image.revision="${BUILD_REF}" \
   org.opencontainers.image.vendor="Christoffer"
